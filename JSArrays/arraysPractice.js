@@ -96,16 +96,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 //Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 
 
-
 function divider(numbersArray){
+  var arr1 = [];
+  var arr2 = [];
   for (var i = 0; i < numbersArray.length; i++){
-    if (numbersArray % 2 === 0){
-      numbersArray.push(numbersArray[i]);
+    if ((numbersArray[i] % 2) === 0){
+      arr1.push(numbersArray[i]);
     }else{
-      numbersArray.push(numbersArray[i]);
+      arr2.push(numbersArray[i]);
     }
   }
-  return numbersArray;
+  return [
+    arr1,
+    arr2,
+  ];
 }
 divider(numbersArray);
 //Code Here
@@ -147,6 +151,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+  const removeItem = (myGroceryList, item)=> {
+    return myGroceryList.filter(function(listItem){
+      return listItem !== item;
+    });
+  }
+  
+  const addItem = (myGroceryList, item) => {
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
+  
+  removeItem(myGroceryList, 'pizza');
+  addItem(myGroceryList, 'bread');
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
